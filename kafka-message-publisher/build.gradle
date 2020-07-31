@@ -1,0 +1,31 @@
+plugins {
+	id 'org.springframework.boot'
+	id 'io.spring.dependency-management'
+	id 'java'
+}
+
+group = 'com.message'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.kafka:spring-kafka'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	testImplementation 'org.springframework.kafka:spring-kafka-test'
+	compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.11'
+	compile group: 'org.json', name: 'json', version: '20090211'
+	compile group: 'net.sf.ehcache', name: 'ehcache', version: '2.10.6'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-cache', version: '2.3.1.RELEASE'
+	
+}
+
+test {
+	useJUnitPlatform()
+}

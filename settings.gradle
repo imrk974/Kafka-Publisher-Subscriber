@@ -1,0 +1,3 @@
+rootProject.name = 'message-produce-consume-kafka-Gradle'
+
+include 'kafka-message-subscriber','kafka-message-publisher'
